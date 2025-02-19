@@ -1,0 +1,67 @@
+
+###
+# @name createAsset
+POST http://localhost:3000/assets
+Content-Type: application/json
+
+{
+  "name": "Google",
+  "symbol": "G1",
+  "price": 200,
+  "image":"http://localhost:9000/GOOGL.png"
+}
+
+### 
+
+@assetId = {{createAsset.response.body._id}}
+
+###
+GET http://localhost:3000/assets
+
+
+###
+GET http://localhost:3000/assets/A1
+
+
+###
+# @name createWallet
+POST http://localhost:3000/wallets
+
+###
+@walletId = {{createWallet.response.body._id}}
+
+###
+GET http://localhost:3000/wallets
+
+
+###
+GET http://localhost:3000/wallets/{{ walletId }}
+
+
+###
+# @name createWallet
+POST http://localhost:3000/wallets/{{ walletId }}/assets
+Content-Type: application/json
+
+{
+  "assetId": "{{ assetId }}",
+  "shares": 100
+}
+
+
+
+###
+POST http://localhost:3000/orders
+Content-Type: application/application/json
+
+{
+  "walletId": "{{ walletId }}",
+  "assetId": "{{ assetId }}",
+  "shares": 10,
+  "price": 100,
+  "type": "BUY"
+}
+
+
+###
+GET http://localhost:3000/orders?walletId={{ walletId }}
