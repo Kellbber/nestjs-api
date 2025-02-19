@@ -20,7 +20,7 @@ GET http://localhost:3000/assets
 
 
 ###
-GET http://localhost:3000/assets/A1
+GET http://localhost:3000/assets/G1
 
 
 ###
@@ -55,7 +55,7 @@ POST http://localhost:3000/orders
 Content-Type: application/application/json
 
 {
-  "walletId": "{{ walletId }}",
+  "walletId": "e3f266ed-76ca-4cd2-a1df-46de627ef852",
   "assetId": "{{ assetId }}",
   "shares": 10,
   "price": 100,
@@ -64,4 +64,4 @@ Content-Type: application/application/json
 
 
 ###
-GET http://localhost:3000/orders?walletId={{ walletId }}
+GET http://localhost:3000/orders?walletId=e3f266ed-76ca-4cd2-a1df-46de627ef852
