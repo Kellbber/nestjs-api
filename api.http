@@ -8,7 +8,7 @@ Content-Type: application/json
   "name": "Google",
   "symbol": "G1",
   "price": 200,
-  "image":"http://localhost:9000/GOOGL.png"
+  "image":"GOOGL.png"
 }
 
 ### 
@@ -52,10 +52,10 @@ Content-Type: application/json
 
 ###
 POST http://localhost:3000/orders
-Content-Type: application/application/json
+Content-Type: application/json
 
 {
-  "walletId": "e3f266ed-76ca-4cd2-a1df-46de627ef852",
+  "walletId": "{{ walletId }}",
   "assetId": "{{ assetId }}",
   "shares": 10,
   "price": 100,
@@ -64,4 +64,14 @@ Content-Type: application/application/json
 
 
 ###
-GET http://localhost:3000/orders?walletId=e3f266ed-76ca-4cd2-a1df-46de627ef852
+GET http://localhost:3000/orders?walletId={{ walletId }}
+
+
+###
+POST http://localhost:3000/assets/G1/dailies
+Content-Type: application/json
+
+{
+  "date":"2024-12-12",
+  "price": 110
+}
