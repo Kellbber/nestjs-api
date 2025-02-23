@@ -15,13 +15,11 @@ import { AssetDailiesService } from './asset-dailes.service';
         name: Asset.name,
         schema: AssetSchema,
       },
-      {
-        name: AssetDaily.name,
-        schema: AssetDailySchema,
-      },
+      { name: AssetDaily.name, schema: AssetDailySchema },
     ]),
   ],
   controllers: [AssetsController, AssetsDailiesController],
   providers: [AssetsService, AssetsGateway, AssetDailiesService],
+  exports: [AssetsService],
 })
 export class AssetsModule {}

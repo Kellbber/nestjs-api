@@ -4,7 +4,8 @@ import { AssetsService } from './assets/assets.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const assetsService = app.get(AssetsService);
+
+  // const assetsService = app.get(AssetsService);
   // assetsService.subscribePriceEvents().subscribe((event) => {
   //   console.log(event);
   // });

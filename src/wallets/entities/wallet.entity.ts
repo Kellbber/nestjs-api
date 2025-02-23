@@ -5,7 +5,7 @@ import { WalletAssetDocument } from './wallet-asset.entity';
 
 export type WalletDocument = HydratedDocument<Wallet>;
 
-@Schema({ timestamps: true })
+@Schema({ timestamps: true, optimisticConcurrency: true })
 export class Wallet {
   @Prop({ default: () => crypto.randomUUID() })
   _id: string;
